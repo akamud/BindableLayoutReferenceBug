@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace BindableLayoutReferenceBug
@@ -12,6 +10,16 @@ namespace BindableLayoutReferenceBug
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        void Handle_ListViewClicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ListViewPage());
+        }
+
+        void Handle_StackLayoutClicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new BindableLayoutPage());
         }
     }
 }

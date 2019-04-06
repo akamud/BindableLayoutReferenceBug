@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -11,7 +13,9 @@ namespace BindableLayoutReferenceBug
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            Log.Listeners.Add(new DelegateLogListener((c, m) => Debug.WriteLine(m, c)));
+
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
