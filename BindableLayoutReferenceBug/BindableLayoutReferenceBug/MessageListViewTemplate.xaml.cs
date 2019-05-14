@@ -2,7 +2,7 @@
 
 namespace BindableLayoutReferenceBug
 {
-    public partial class MessageListViewTemplate : ContentView
+    public partial class MessageListViewTemplate : ListView
     {
         public MessageListViewTemplate()
         {

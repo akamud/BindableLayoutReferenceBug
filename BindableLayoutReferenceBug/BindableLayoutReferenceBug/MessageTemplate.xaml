@@ -1,15 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BindableLayoutReferenceBug.MessageTemplate" x:Name="page">
-    <ContentView.Content>
-        <StackLayout BindableLayout.ItemsSource="{Binding Options}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Label Text="{Binding .}" />
-                        <Button BackgroundColor="Blue" Text="Show Message" Command="{Binding Source={x:Reference page}, Path=Parent.BindingContext.ShowMessageCommand}" CommandParameter="{Binding .}"/>
-                    </StackLayout>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>
-    </ContentView.Content>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+  x:Class="BindableLayoutReferenceBug.MessageTemplate"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Name="page">
+  <ContentView.Content>
+    <StackLayout BindableLayout.ItemsSource="{Binding Options}">
+      <BindableLayout.ItemTemplate>
+        <DataTemplate>
+          <StackLayout>
+            <Label Text="{Binding .}" />
+            <Button
+              BackgroundColor="Blue"
+              Command="{Binding Source={x:Reference page}, Path=Parent.BindingContext.ShowMessageCommand}"
+              CommandParameter="{Binding .}"
+              Text="Show Message" />
+          </StackLayout>
+        </DataTemplate>
+      </BindableLayout.ItemTemplate>
+    </StackLayout>
+  </ContentView.Content>
 </ContentView>
