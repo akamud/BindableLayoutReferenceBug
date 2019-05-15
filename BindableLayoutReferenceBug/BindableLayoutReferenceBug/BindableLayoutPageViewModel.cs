@@ -8,7 +8,7 @@ namespace BindableLayoutReferenceBug
     public class BindableLayoutPageViewModel
     {
         public ObservableCollection<Message> Items { get; set; }
-        public ICommand ShowMessageCommand;
+        public ICommand ShowMessageCommand { get; set; }
 
         public BindableLayoutPageViewModel()
         {
